@@ -1,8 +1,8 @@
 # ============================================================
-# Starship — Terminal / Flexoki Dark
+# Starship — Terminal / Horizon
 # ============================================================
 
-palette = "flexoki"
+palette = "horizon"
 
 add_newline = true
 
@@ -29,22 +29,26 @@ format = '''
 
 
 # ------------------------------------------------------------
-# Flexoki Dark
+#   Horizon
 # ------------------------------------------------------------
 
-[palettes.flexoki]
-text    = "#CECDC3"
-muted   = "#878580"
-faint   = "#575653"
+[palettes.horizon]
+bg      = "#1C1E26"
+surface = "#2E303E"
 
-red     = "#D14D41"
-orange  = "#DA702C"
-yellow  = "#D0A215"
-green   = "#879A39"
-cyan    = "#3AA99F"
-blue    = "#4385BE"
-purple  = "#8B7EC8"
-magenta = "#CE5D97"
+text    = "#D5D8DA"
+bright  = "#F2F2F2"
+muted   = "#6C6F93"
+faint   = "#2E303E"
+
+red     = "#E95678"
+orange  = "#F09483"
+yellow  = "#FAB795"
+green   = "#29D398"
+cyan    = "#59E3E3"
+blue    = "#26BBD9"
+purple  = "#B877DB"
+magenta = "#EE64AE"
 
 
 # ------------------------------------------------------------
@@ -145,7 +149,7 @@ diverged   = '[ ${ahead_count}/${behind_count}](magenta) '
 # ------------------------------------------------------------
 
 [git_metrics]
-disabled = false
+disabled = true
 only_nonzero_diffs = true
 
 added_style = "cyan"
@@ -181,7 +185,7 @@ format = '[$symbol$version]($style) '
 
 [rust]
 symbol = " "
-style = "bold orange"
+style = "orange"
 
 version_format = "${major}.${minor}"
 format = '[$symbol$version]($style) '
