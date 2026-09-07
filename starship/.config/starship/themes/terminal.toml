@@ -1,5 +1,5 @@
 # ============================================================
-# Starship — Terminal / Horizon
+# Starship — Terminal / FD
 # ============================================================
 
 palette = "horizon"
@@ -29,26 +29,26 @@ format = '''
 
 
 # ------------------------------------------------------------
-#   Horizon
+#   Flexoki Dusk
 # ------------------------------------------------------------
+[palettes.flexoki_dusk]
+bg       = "#17181C"
+surface  = "#202228"
+surface2 = "#2A2D34"
 
-[palettes.horizon]
-bg      = "#1C1E26"
-surface = "#2E303E"
+text     = "#CECDC3"
+bright   = "#FFFCF0"
+muted    = "#878580"
+faint    = "#5E6068"
 
-text    = "#D5D8DA"
-bright  = "#F2F2F2"
-muted   = "#6C6F93"
-faint   = "#2E303E"
-
-red     = "#E95678"
-orange  = "#F09483"
-yellow  = "#FAB795"
-green   = "#29D398"
-cyan    = "#59E3E3"
-blue    = "#26BBD9"
-purple  = "#B877DB"
-magenta = "#EE64AE"
+red      = "#D14D41"
+orange   = "#DA702C"
+yellow   = "#D0A215"
+green    = "#879A39"
+cyan     = "#4CB4AB"
+blue     = "#5B8FC4"
+purple   = "#9A8DD0"
+magenta  = "#CE5D97"
 
 
 # ------------------------------------------------------------

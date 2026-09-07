@@ -1,30 +1,27 @@
 colourful: true
 
-# Flexoki Dark — accessibility-biased
-
 filekinds:
   normal:
     foreground: "#CECDC3"
 
   directory:
-    foreground: "#92BFDB"
+    foreground: "#5B8FC4"
     is_bold: true
 
   symlink:
-    foreground: "#87D3C3"
+    foreground: "#4CB4AB"
     is_bold: true
     is_underline: true
 
   executable:
-    foreground: "#BEC97E"
+    foreground: "#879A39"
     is_bold: true
 
   pipe:
-    foreground: "#ECCB60"
+    foreground: "#D0A215"
 
   socket:
-    foreground: "#C4B9E0"
-    is_bold: true
+    foreground: "#9A8DD0"
 
   block_device:
     foreground: "#DA702C"
@@ -33,34 +30,29 @@ filekinds:
     foreground: "#DA702C"
 
   special:
-    foreground: "#ECCB60"
+    foreground: "#CE5D97"
 
-
-# Destination of a symlink:
 symlink_path:
   foreground: "#878580"
 
 broken_symlink:
-  foreground: "#F89A8A"
+  foreground: "#D14D41"
   is_bold: true
 
 broken_path_overlay:
-  foreground: "#F89A8A"
+  foreground: "#D14D41"
   is_underline: true
 
-
-# Punctuation such as ->, separators, etc.
 punctuation:
-  foreground: "#575653"
+  foreground: "#5E6068"
 
-
-# Keep metadata quiet.
 users:
   user_you:
     foreground: "#CECDC3"
 
   user_root:
-    foreground: "#F89A8A"
+    foreground: "#D14D41"
+    is_bold: true
 
   user_other:
     foreground: "#878580"
@@ -69,37 +61,56 @@ users:
     foreground: "#878580"
 
   group_other:
-    foreground: "#6F6E69"
+    foreground: "#5E6068"
 
   group_root:
-    foreground: "#F89A8A"
-
+    foreground: "#D14D41"
 
 date:
   foreground: "#878580"
 
+size:
+  major:
+    foreground: "#CECDC3"
 
-# Git state: color + unique semantics rather than red/green alone.
+  minor:
+    foreground: "#878580"
+
+  number_byte:
+    foreground: "#878580"
+
+  number_kilo:
+    foreground: "#878580"
+
+  number_mega:
+    foreground: "#D0A215"
+
+  number_giga:
+    foreground: "#DA702C"
+
+  number_huge:
+    foreground: "#D14D41"
+
 git:
   new:
-    foreground: "#87D3C3"
+    foreground: "#4CB4AB"
 
   modified:
-    foreground: "#ECCB60"
+    foreground: "#D0A215"
 
   deleted:
-    foreground: "#F89A8A"
+    foreground: "#D14D41"
 
   renamed:
-    foreground: "#92BFDB"
+    foreground: "#5B8FC4"
 
   typechange:
-    foreground: "#C4B9E0"
+    foreground: "#9A8DD0"
 
   ignored:
-    foreground: "#575653"
+    foreground: "#5E6068"
     is_dimmed: true
 
   conflicted:
-    foreground: "#F89A8A"
+    foreground: "#D14D41"
     is_bold: true
