@@ -1,0 +1,419 @@
+# ============================================================
+# Starship — Terminal / Flexoki Dark
+# ============================================================
+
+palette = "flexoki"
+
+add_newline = true
+
+continuation_prompt = '[│](faint) '
+
+
+# ------------------------------------------------------------
+# Layout
+#
+# Clean:
+#
+# ┌[  ~/dotfiles   main ]                    󰥔 16:32:41
+# └$
+#
+# Busy:
+#
+# ┌[  ~/src/foo   main   2   1   3 ]   1.98  󰅐 4.2s  󰥔 16:32:44
+# └$
+# ------------------------------------------------------------
+
+format = '''
+[┌](faint)[\[](faint)[  ](blue)$directory$git_branch$git_commit$git_state$git_status$git_metrics[ \]](faint)$fill$golang$rust$c$lua$nodejs$python$container$docker_context$username$hostname$shlvl$sudo$jobs$cmd_duration$status$battery$memory_usage$time
+[└](faint)$character'''
+
+
+# ------------------------------------------------------------
+# Flexoki Dark
+# ------------------------------------------------------------
+
+[palettes.flexoki]
+text    = "#CECDC3"
+muted   = "#878580"
+faint   = "#575653"
+
+red     = "#D14D41"
+orange  = "#DA702C"
+yellow  = "#D0A215"
+green   = "#879A39"
+cyan    = "#3AA99F"
+blue    = "#4385BE"
+purple  = "#8B7EC8"
+magenta = "#CE5D97"
+
+
+# ------------------------------------------------------------
+# Fill
+#
+# Pushes contextual instrumentation to the right side of the
+# first prompt line.
+# ------------------------------------------------------------
+
+[fill]
+symbol = " "
+style = "faint"
+
+
+# ------------------------------------------------------------
+# Directory
+# ------------------------------------------------------------
+
+[directory]
+style = "text"
+truncation_length = 4
+truncate_to_repo = false
+format = '[$path]($style)'
+
+
+# Optional:
+#
+# [directory.substitutions]
+# "~/dotfiles" = "󰒓 dotfiles"
+
+
+# ------------------------------------------------------------
+# Git branch
+# ------------------------------------------------------------
+
+[git_branch]
+symbol = "   "
+style = "purple"
+format = '[$symbol$branch]($style)'
+
+
+# ------------------------------------------------------------
+# Detached HEAD / Git tag
+# ------------------------------------------------------------
+
+[git_commit]
+commit_hash_length = 7
+only_detached = true
+
+tag_disabled = false
+tag_symbol = "  "
+
+style = "orange"
+format = ' [ $hash$tag]($style)'
+
+
+# ------------------------------------------------------------
+# Git operation state
+#
+# Merge / rebase / cherry-pick / revert / etc.
+# ------------------------------------------------------------
+
+[git_state]
+style = "orange"
+format = ' [󰐕 $state( $progress_current/$progress_total)]($style)'
+
+
+# ------------------------------------------------------------
+# Git working tree
+#
+# Glyph + color both communicate state.
+# ------------------------------------------------------------
+
+[git_status]
+style = "muted"
+format = ' [$all_status$ahead_behind]($style)'
+
+conflicted = '[ ${count}](red) '
+stashed    = '[󰆓 ${count}](purple) '
+modified   = '[ ${count}](yellow) '
+staged     = '[ ${count}](cyan) '
+renamed    = '[󰑕 ${count}](blue) '
+deleted    = '[ ${count}](red) '
+untracked  = '[ ${count}](orange) '
+
+ahead      = '[ ${count}](cyan) '
+behind     = '[ ${count}](orange) '
+diverged   = '[ ${ahead_count}/${behind_count}](magenta) '
+
+
+# ------------------------------------------------------------
+# Git diff metrics
+#
+# Example:
+#    42  8
+#
+# Disable this if the Git area becomes too busy.
+# ------------------------------------------------------------
+
+[git_metrics]
+disabled = false
+only_nonzero_diffs = true
+
+added_style = "cyan"
+deleted_style = "orange"
+
+format = ' [ $added]($added_style)[  $deleted]($deleted_style)'
+
+
+# ------------------------------------------------------------
+# Prompt character
+# ------------------------------------------------------------
+
+[character]
+success_symbol = '[\$](cyan)'
+error_symbol   = '[\$](red)'
+
+
+# ------------------------------------------------------------
+# Go
+# ------------------------------------------------------------
+
+[golang]
+symbol = "󰟓 "
+style = "cyan"
+
+version_format = "${major}.${minor}"
+format = '[$symbol$version]($style) '
+
+
+# ------------------------------------------------------------
+# Rust
+# ------------------------------------------------------------
+
+[rust]
+symbol = " "
+style = "bold orange"
+
+version_format = "${major}.${minor}"
+format = '[$symbol$version]($style) '
+
+
+# ------------------------------------------------------------
+# C
+# ------------------------------------------------------------
+
+[c]
+symbol = " "
+style = "blue"
+
+format = '[$symbol$name]($style) '
+
+
+# ------------------------------------------------------------
+# Lua
+# ------------------------------------------------------------
+
+[lua]
+symbol = " "
+style = "blue"
+
+version_format = "${major}.${minor}"
+format = '[$symbol$version]($style) '
+
+
+# ------------------------------------------------------------
+# Node
+# ------------------------------------------------------------
+
+[nodejs]
+symbol = " "
+style = "green"
+
+version_format = "${major}.${minor}"
+format = '[$symbol$version]($style) '
+
+
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+
+[python]
+symbol = " "
+style = "yellow"
+
+version_format = "${major}.${minor}"
+format = '[$symbol$version]($style) '
+
+
+# ------------------------------------------------------------
+# Container
+# ------------------------------------------------------------
+
+[container]
+symbol = " "
+style = "purple"
+
+format = '[$symbol$name]($style) '
+
+
+# ------------------------------------------------------------
+# Docker context
+# ------------------------------------------------------------
+
+[docker_context]
+symbol = " "
+style = "blue"
+
+format = '[$symbol$context]($style) '
+
+
+# ------------------------------------------------------------
+# Username
+#
+# Normally hidden during ordinary local use.
+# ------------------------------------------------------------
+
+[username]
+show_always = false
+
+style_user = "yellow"
+style_root = "red"
+
+format = '[ $user]($style) '
+
+
+# ------------------------------------------------------------
+# Hostname
+#
+# Primarily useful over SSH.
+# ------------------------------------------------------------
+
+[hostname]
+ssh_only = true
+ssh_symbol = "󰒋 "
+
+style = "orange"
+
+format = '[$ssh_symbol$hostname]($style) '
+
+
+# ------------------------------------------------------------
+# Nested shell level
+# ------------------------------------------------------------
+
+[shlvl]
+disabled = false
+threshold = 2
+
+symbol = "󰆍 "
+style = "purple"
+
+format = '[$symbol$shlvl]($style) '
+
+
+# ------------------------------------------------------------
+# Cached sudo credentials
+# ------------------------------------------------------------
+
+[sudo]
+disabled = false
+
+symbol = "󰌆 "
+style = "red"
+
+format = '[$symbol]($style) '
+
+
+# ------------------------------------------------------------
+# Background jobs
+# ------------------------------------------------------------
+
+[jobs]
+symbol = "󰆍 "
+
+symbol_threshold = 1
+number_threshold = 2
+
+style = "purple"
+
+format = '[$symbol$number]($style) '
+
+
+# ------------------------------------------------------------
+# Command duration
+#
+# Hidden for commands under two seconds.
+# ------------------------------------------------------------
+
+[cmd_duration]
+min_time = 2000
+
+style = "muted"
+
+format = '[󰅐 $duration]($style) '
+
+
+# ------------------------------------------------------------
+# Exit status
+#
+# Success is silent.
+# ------------------------------------------------------------
+
+[status]
+disabled = false
+
+style = "red"
+
+format = '[ $status]($style) '
+
+
+# ------------------------------------------------------------
+# Battery
+#
+# Hidden while battery level is healthy.
+# ------------------------------------------------------------
+
+[battery]
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
+unknown_symbol = "󰂑 "
+empty_symbol = "󰂎 "
+
+[[battery.display]]
+threshold = 5
+style = "red"
+
+[[battery.display]]
+threshold = 10
+style = "yellow"
+
+
+# ------------------------------------------------------------
+# Memory
+#
+# Only show when RAM utilization reaches 85%.
+# ------------------------------------------------------------
+
+[memory_usage]
+disabled = false
+threshold = 85
+
+symbol = "󰍛 "
+style = "orange"
+
+format = '[$symbol$ram_pct]($style) '
+
+
+# ------------------------------------------------------------
+# Clock
+#
+# 24-hour time + seconds:
+#   16:32:47
+# ------------------------------------------------------------
+
+[time]
+disabled = false
+
+time_format = "%T"
+
+style = "muted"
+
+format = '[󰥔 $time]($style)'
+
+
+# ------------------------------------------------------------
+# Disabled / noise reduction
+# ------------------------------------------------------------
+
+[package]
+disabled = true

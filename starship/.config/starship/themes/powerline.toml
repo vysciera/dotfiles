@@ -1,0 +1,88 @@
+palette = "flexoki"
+add_newline = true
+
+format = """
+[](blue)\
+$directory\
+[](fg:blue bg:purple)\
+$git_branch\
+[](fg:purple bg:surface)\
+$git_status\
+[](surface)\
+$line_break\
+$character"""
+
+right_format = """
+$golang\
+$rust\
+$c\
+$cmd_duration\
+$status"""
+
+[palettes.flexoki]
+text    = "#CECDC3"
+muted   = "#878580"
+faint   = "#575653"
+surface = "#282726"
+
+red     = "#D14D41"
+orange  = "#DA702C"
+yellow  = "#D0A215"
+green   = "#879A39"
+cyan    = "#3AA99F"
+blue    = "#4385BE"
+purple  = "#8B7EC8"
+magenta = "#CE5D97"
+
+[directory]
+style = "fg:#FFFCF0 bg:blue"
+format = "[ $path ]($style)"
+
+[git_branch]
+symbol = " "
+style = "fg:#100F0F bg:purple"
+format = "[ $symbol$branch ]($style)"
+
+[git_status]
+style = "fg:text bg:surface"
+format = "[ $all_status$ahead_behind ]($style)"
+
+modified = "~${count}"
+staged = "+${count}"
+untracked = "?${count}"
+renamed = "»${count}"
+deleted = "×${count}"
+conflicted = "!${count}"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+
+[character]
+success_symbol = "[❯](cyan)"
+error_symbol = "[❯](red)"
+
+[golang]
+symbol = "󰟓 "
+style = "cyan"
+version_format = "${major}.${minor}"
+format = "[](cyan)[ $symbol$version ](fg:#100F0F bg:cyan)[](cyan) "
+
+[rust]
+symbol = " "
+style = "orange"
+version_format = "${major}.${minor}"
+format = "[](orange)[ $symbol$version ](fg:#100F0F bg:orange)[](orange) "
+
+[c]
+symbol = " "
+style = "blue"
+format = "[](blue)[ $symbol$name ](fg:#100F0F bg:blue)[](blue) "
+
+[cmd_duration]
+min_time = 2000
+style = "muted"
+format = "[󰅐 $duration]($style) "
+
+[status]
+disabled = false
+style = "red"
+format = "[exit $status]($style)"

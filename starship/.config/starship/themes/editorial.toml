@@ -1,0 +1,145 @@
+palette = "flexoki"
+
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$line_break\
+$character"""
+
+right_format = """
+$golang\
+$rust\
+$c\
+$lua\
+$nodejs\
+$python\
+$cmd_duration\
+$jobs\
+$status"""
+
+# ------------------------------------------------------------
+# Flexoki
+# ------------------------------------------------------------
+
+[palettes.flexoki]
+text    = "#CECDC3"
+muted   = "#878580"
+faint   = "#575653"
+
+red     = "#D14D41"
+orange  = "#DA702C"
+yellow  = "#D0A215"
+green   = "#879A39"
+cyan    = "#3AA99F"
+blue    = "#4385BE"
+purple  = "#8B7EC8"
+magenta = "#CE5D97"
+
+
+# ------------------------------------------------------------
+# Directory
+# ------------------------------------------------------------
+
+[directory]
+style = "text"
+truncation_length = 4
+truncate_to_repo = false
+format = "[$path]($style) "
+
+
+# ------------------------------------------------------------
+# Git
+# ------------------------------------------------------------
+
+[git_branch]
+symbol = " "
+style = "muted"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "yellow"
+format = "[$all_status$ahead_behind]($style)"
+
+modified  = " ~${count}"
+staged    = " +${count}"
+untracked = " ?${count}"
+renamed   = " »${count}"
+deleted   = " ×${count}"
+conflicted = " !${count}"
+
+ahead    = " ⇡${count}"
+behind   = " ⇣${count}"
+diverged = " ⇕⇡${ahead_count}⇣${behind_count}"
+
+
+# ------------------------------------------------------------
+# Prompt
+# ------------------------------------------------------------
+
+[character]
+success_symbol = "[›](text)"
+error_symbol   = "[›](red)"
+vimcmd_symbol  = "[‹](cyan)"
+
+
+# ------------------------------------------------------------
+# Toolchains
+# ------------------------------------------------------------
+
+[golang]
+symbol = "󰟓 "
+style = "cyan"
+version_format = "${major}.${minor}"
+format = "[$symbol$version]($style) "
+
+[rust]
+symbol = " "
+style = "orange"
+version_format = "${major}.${minor}"
+format = "[$symbol$version]($style) "
+
+[c]
+symbol = " "
+style = "blue"
+format = "[$symbol$name]($style) "
+
+[lua]
+symbol = " "
+style = "blue"
+version_format = "${major}.${minor}"
+format = "[$symbol$version]($style) "
+
+[nodejs]
+symbol = " "
+style = "green"
+version_format = "${major}.${minor}"
+format = "[$symbol$version]($style) "
+
+[python]
+symbol = " "
+style = "yellow"
+version_format = "${major}.${minor}"
+format = "[$symbol$version]($style) "
+
+
+# ------------------------------------------------------------
+# Runtime state
+# ------------------------------------------------------------
+
+[cmd_duration]
+min_time = 2000
+style = "muted"
+format = "[󰅐 $duration]($style) "
+
+[jobs]
+symbol = "󰆍 "
+style = "purple"
+format = "[$symbol$number]($style) "
+
+[status]
+disabled = false
+style = "red"
+format = "[exit $status]($style) "

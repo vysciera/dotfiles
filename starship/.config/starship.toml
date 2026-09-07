@@ -1,0 +1,156 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+palette = "flexoki_dark"
+
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$line_break\
+$character"""
+
+right_format = """
+$golang\
+$rust\
+$c\
+$lua\
+$nodejs\
+$python\
+$cmd_duration\
+$jobs\
+$status"""
+
+# ------------------------------------------------------------
+# Flexoki
+# ------------------------------------------------------------
+
+[palettes.flexoki_dark]
+bg = "#100F0F"
+
+base950 = "#1C1B1A"
+base900 = "#282726"
+base850 = "#343331"
+base800 = "#403E3C"
+
+muted = "#6F6E69"
+faint = "#878580"
+text = "#CECDC3"
+
+red = "#AF3029"
+orange = "#BC5215"
+yellow = "#AD8301"
+green = "#66800B"
+cyan = "#24837B"
+blue = "#205EA6"
+purple = "#5E409D"
+magenta = "#A02F6F"
+
+# ------------------------------------------------------------
+# Directory
+# ------------------------------------------------------------
+
+[directory]
+style = "bold text"
+read_only = " ro"
+read_only_style = "orange"
+truncation_length = 4
+truncate_to_repo = false
+format = "[$path]($style) "
+
+# ------------------------------------------------------------
+# Git
+# ------------------------------------------------------------
+
+[git_branch]
+symbol = ""
+style = "faint"
+format = "[$branch]($style) "
+
+[git_status]
+style = "faint"
+format = "[$all_status$ahead_behind]($style) "
+
+conflicted = "[=${count}](red)"
+stashed = "s${count}"
+modified = "[~${count}](yellow)"
+staged = "[+${count}](green)"
+renamed = "[»${count}](cyan)"
+deleted = "[×${count}](red)"
+untracked = "[?${count}](orange)"
+
+ahead = "[⇡${count}](cyan)"
+behind = "[⇣${count}](orange)"
+diverged = "[⇕⇡${ahead_count}⇣${behind_count}](magenta)"
+
+# ------------------------------------------------------------
+# Input
+# ------------------------------------------------------------
+
+[character]
+success_symbol = "[❯](text)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](cyan)"
+
+# ------------------------------------------------------------
+# Command metadata
+# ------------------------------------------------------------
+
+[cmd_duration]
+min_time = 2000
+style = "faint"
+format = "[$duration]($style) "
+
+[jobs]
+symbol = "jobs "
+style = "faint"
+format = "[$symbol$number]($style) "
+
+[status]
+disabled = false
+style = "red"
+format = "[exit $status]($style) "
+
+# ------------------------------------------------------------
+# Languages
+# ------------------------------------------------------------
+
+[golang]
+symbol = "go "
+style = "cyan"
+version_format = "${major}.${minor}"
+format = "[$symbol$version]($style) "
+
+[rust]
+symbol = "rust "
+style = "orange"
+version_format = "${major}.${minor}"
+format = "[$symbol$version]($style) "
+
+[c]
+symbol = "c "
+style = "blue"
+format = "[$symbol$name $version]($style) "
+
+[lua]
+symbol = "lua "
+style = "blue"
+version_format = "${major}.${minor}"
+format = "[$symbol$version]($style) "
+
+[nodejs]
+symbol = "node "
+style = "green"
+version_format = "${major}.${minor}"
+format = "[$symbol$version]($style) "
+
+[python]
+symbol = "py "
+style = "yellow"
+version_format = "${major}.${minor}"
+format = "[$symbol$version]($style) "
+
+[package]
+disabled = true
