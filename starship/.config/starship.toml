@@ -2,7 +2,7 @@
 # Starship — Terminal / FD
 # ============================================================
 
-palette = "horizon"
+palette = "flexoki_dusk"
 
 add_newline = true
 
