@@ -1,0 +1,105 @@
+colourful: true
+
+# Flexoki Dark — accessibility-biased
+
+filekinds:
+  normal:
+    foreground: "#CECDC3"
+
+  directory:
+    foreground: "#92BFDB"
+    is_bold: true
+
+  symlink:
+    foreground: "#87D3C3"
+    is_bold: true
+    is_underline: true
+
+  executable:
+    foreground: "#BEC97E"
+    is_bold: true
+
+  pipe:
+    foreground: "#ECCB60"
+
+  socket:
+    foreground: "#C4B9E0"
+    is_bold: true
+
+  block_device:
+    foreground: "#DA702C"
+
+  char_device:
+    foreground: "#DA702C"
+
+  special:
+    foreground: "#ECCB60"
+
+
+# Destination of a symlink:
+symlink_path:
+  foreground: "#878580"
+
+broken_symlink:
+  foreground: "#F89A8A"
+  is_bold: true
+
+broken_path_overlay:
+  foreground: "#F89A8A"
+  is_underline: true
+
+
+# Punctuation such as ->, separators, etc.
+punctuation:
+  foreground: "#575653"
+
+
+# Keep metadata quiet.
+users:
+  user_you:
+    foreground: "#CECDC3"
+
+  user_root:
+    foreground: "#F89A8A"
+
+  user_other:
+    foreground: "#878580"
+
+  group_yours:
+    foreground: "#878580"
+
+  group_other:
+    foreground: "#6F6E69"
+
+  group_root:
+    foreground: "#F89A8A"
+
+
+date:
+  foreground: "#878580"
+
+
+# Git state: color + unique semantics rather than red/green alone.
+git:
+  new:
+    foreground: "#87D3C3"
+
+  modified:
+    foreground: "#ECCB60"
+
+  deleted:
+    foreground: "#F89A8A"
+
+  renamed:
+    foreground: "#92BFDB"
+
+  typechange:
+    foreground: "#C4B9E0"
+
+  ignored:
+    foreground: "#575653"
+    is_dimmed: true
+
+  conflicted:
+    foreground: "#F89A8A"
+    is_bold: true
