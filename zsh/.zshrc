@@ -147,3 +147,22 @@ source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 # ------------------------------------------------------------
 
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+[ -f "/Users/vys/.ghcup/env" ] && . "/Users/vys/.ghcup/env" # ghcup-env
+
+# ------------------------------------------------------------
+# homebrew
+# ------------------------------------------------------------
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# ------------------------------------------------------------
+# rbenv
+# ------------------------------------------------------------
+
+eval "$(rbenv init - zsh)"
+
+# ------------------------------------------------------------
+# GOPATH
+# ------------------------------------------------------------
+export PATH="$PATH:$(go env GOPATH)/bin"
