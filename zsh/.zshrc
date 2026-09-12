@@ -166,3 +166,10 @@ eval "$(rbenv init - zsh)"
 # GOPATH
 # ------------------------------------------------------------
 export PATH="$PATH:$(go env GOPATH)/bin"
+
+# bun completions
+[ -s "/Users/vys/.bun/_bun" ] && source "/Users/vys/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

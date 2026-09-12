@@ -121,6 +121,18 @@ vim.lsp.config("clangd", {
   },
 })
 
+-- ------------------------------------------------------------
+-- Ruby
+-- ------------------------------------------------------------
+vim.lsp.config("ruby_lsp", {
+    cmd = {
+        vim.fn.expand("~/.rbenv/shims/ruby-lsp"),
+    },
+
+    init_options = {
+        formatter = "auto",
+    },
+})
 
 -- ------------------------------------------------------------
 -- Enable
@@ -131,4 +143,5 @@ vim.lsp.enable({
   "gopls",
   "rust_analyzer",
   "clangd",
+  "ruby_lsp",
 })
